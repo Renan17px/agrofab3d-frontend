@@ -707,3 +707,13 @@ com foco na conexão entre:
 **Problemas reais do campo. Soluções reais em fabricação.**
 
 ---
+
+## 💻 Frontend
+
+O protótipo navegável da interface (somente frontend, com dados fictícios) está em [`frontend/`](frontend/README.md).
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
