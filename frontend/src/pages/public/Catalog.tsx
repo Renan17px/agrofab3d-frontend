@@ -180,7 +180,7 @@ export default function Catalog() {
             <EmptyState
               icon={<Siren className="h-10 w-10" />}
               title="Nenhuma solução encontrada"
-              action={<LinkButton to={`/tenho-uma-dor${q ? `?titulo=${encodeURIComponent(q)}` : ''}`} variant="sun">Publicar como “Tenho uma dor”</LinkButton>}
+              action={<LinkButton to={`/tenho-uma-dor${q ? `?titulo=${encodeURIComponent(q)}` : ''}`} variant="sun">Pedir uma solução</LinkButton>}
             >
               Não tem problema! Publique sua necessidade e deixe que as empresas de impressão 3D tragam a solução até você.
             </EmptyState>
@@ -191,7 +191,7 @@ export default function Catalog() {
               </div>
               <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl bg-sol-300/15 p-6 text-center ring-1 ring-sol-300 sm:flex-row sm:justify-between sm:text-left">
                 <p className="text-stone-800"><strong>Não achou exatamente o que precisa?</strong> Publique sua dor e receba propostas sob medida.</p>
-                <LinkButton to={`/tenho-uma-dor${q ? `?titulo=${encodeURIComponent(q)}` : ''}`} variant="sun">Tenho uma dor</LinkButton>
+                <LinkButton to={`/tenho-uma-dor${q ? `?titulo=${encodeURIComponent(q)}` : ''}`} variant="sun">Pedir uma solução</LinkButton>
               </div>
             </>
           )}

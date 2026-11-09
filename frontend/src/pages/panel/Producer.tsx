@@ -36,7 +36,7 @@ export function ProducerHome() {
           <div className="mb-3 flex items-center justify-between"><h2 className="text-lg font-bold text-stone-900">Minhas dores recentes</h2><Link to="/painel/dores" className="text-sm font-semibold text-campo-700 hover:underline">Ver todas</Link></div>
           <div className="space-y-3">
             {pains.slice(0, 3).map((p) => <PainCard key={p.id} pain={p} to={`/painel/dores/${p.id}`} />)}
-            {pains.length === 0 && <EmptyState title="Nenhuma dor publicada" action={<LinkButton to="/tenho-uma-dor" variant="sun">Tenho uma dor</LinkButton>} />}
+            {pains.length === 0 && <EmptyState title="Nenhuma dor publicada" action={<LinkButton to="/tenho-uma-dor" variant="sun">Pedir uma solução</LinkButton>} />}
           </div>
         </section>
         <section>

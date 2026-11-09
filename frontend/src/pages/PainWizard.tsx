@@ -72,7 +72,7 @@ export default function PainWizard() {
     return (
       <Container>
         <EmptyState icon={<Siren className="h-10 w-10" />} title="Funcionalidade para produtores" action={user.tipo === 'empresa' ? <LinkButton to="/painel/oportunidades">Ver oportunidades</LinkButton> : undefined}>
-          “Tenho uma dor” é usada por produtores rurais para publicar necessidades. Como empresa, você encontra essas dores em Oportunidades.
+          “Pedir uma solução” é usado por produtores rurais para publicar necessidades. Como empresa, você encontra essas dores em Oportunidades.
         </EmptyState>
       </Container>
     )
@@ -130,7 +130,7 @@ export default function PainWizard() {
     <Container className="max-w-3xl">
       <div className="mb-6">
         <span className="inline-flex items-center gap-2 rounded-full bg-sol-300/30 px-3 py-1 text-sm font-bold text-stone-900">
-          <Siren className="h-4 w-4" /> {editing ? 'Editar dor' : 'Tenho uma dor'}
+          <Siren className="h-4 w-4" /> {editing ? 'Editar dor' : 'Pedir uma solução'}
         </span>
         <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-stone-900 sm:text-3xl">{editing ? 'Atualize sua necessidade' : 'Conte qual é o seu problema'}</h1>
         <p className="mt-1 text-stone-600">Não precisa de conhecimento técnico nem de arquivo 3D. Preencha o que souber, as empresas ajudam com o resto.</p>

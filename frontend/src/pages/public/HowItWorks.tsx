@@ -39,7 +39,7 @@ export default function HowItWorks() {
           />
         </Card>
         <Card className="p-6">
-          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 2, “Tenho uma dor”</h2>
+          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 2, “Pedir uma solução”</h2>
           <Flow
             steps={[
               { icon: Siren, t: 'Produtor publica a dor', d: 'Fotos, máquina, quantidade, local e prazo, o que souber.' },
@@ -64,7 +64,7 @@ export default function HowItWorks() {
       </Card>
       <div className="mt-8 flex flex-wrap gap-3">
         <LinkButton to="/catalogo">Explorar o catálogo</LinkButton>
-        <LinkButton to="/tenho-uma-dor" variant="sun">Tenho uma dor</LinkButton>
+        <LinkButton to="/tenho-uma-dor" variant="sun">Pedir uma solução</LinkButton>
       </div>
     </Container>
   )

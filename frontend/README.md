@@ -47,7 +47,7 @@ Em **Minha conta → Restaurar dados de demonstração** a base volta ao estado 
 
 **Públicas:** Início, Como funciona, Catálogo técnico (busca + filtros), Detalhe da peça, Empresas,
 Perfil da empresa, Guia de materiais, Planos, Selo de verificação, Termos de uso, Privacidade, Entrar, Cadastro
-e o fluxo **Tenho uma dor**.
+e o fluxo **Pedir uma solução**.
 
 **Produtor:** Resumo, Minhas dores (com propostas recebidas, aceitar/recusar, contato e avaliação),
 Meus orçamentos, Minha conta.
@@ -80,7 +80,7 @@ proposta técnica), Minhas propostas, Pedidos de orçamento, Plano.
 | RNF-004 — Mobile-first / PWA / leve | Layout responsivo com barra inferior no celular, `public/sw.js`, code-splitting |
 | RNF-006 — LGPD | Consentimento no cadastro, política de privacidade, exportar dados, excluir/anonimizar conta |
 | RNF-007 — Licença visível no catálogo | Bloco "Origem e licença do modelo" na peça; obrigatório para modelos externos |
-| RNF-008 — "Tenho uma dor" em até 4 etapas | `PainWizard` (4 etapas, pode começar sem login, rascunho automático) |
+| RNF-008 — "Pedir uma solução" em até 4 etapas | `PainWizard` (4 etapas, pode começar sem login, rascunho automático) |
 | RNF-009/012 — Versões imutáveis e auditoria | `addVersion` só acrescenta; `AdminHistory` |
 | RNF-015 — Contraste WCAG AA | Paleta `campo`/`terra` em `tailwind.config.js` |
 | RNF-016 — Aceite dos termos de responsabilidade | Checkbox obrigatório no cadastro, data do aceite registrada |

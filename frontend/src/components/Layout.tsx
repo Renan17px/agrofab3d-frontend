@@ -109,11 +109,11 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4">
         <Link to="/" aria-label="AgroFab3D, início" className="shrink-0">
-          <Logo />
+          <Logo withName />
         </Link>
-        <nav className="ml-4 hidden items-center gap-1 lg:flex" aria-label="Principal">
+        <nav className="ml-4 hidden items-center gap-1 xl:flex" aria-label="Principal">
           {NAV.map((n) => (
-            <NavLink key={n.to} to={n.to} className={({ isActive }) => cx('rounded-lg px-3 py-2 text-sm font-semibold', isActive ? 'text-campo-800 bg-campo-50' : 'text-stone-700 hover:text-stone-900')}>
+            <NavLink key={n.to} to={n.to} className={({ isActive }) => cx('whitespace-nowrap rounded-lg px-3 py-2 text-sm font-semibold', isActive ? 'text-campo-800 bg-campo-50' : 'text-stone-700 hover:text-stone-900')}>
               {n.label}
             </NavLink>
           ))}
@@ -123,7 +123,7 @@ function Header() {
             </LinkButton>
           )}
         </nav>
-        <form onSubmit={submit} className="ml-auto hidden max-w-xs flex-1 md:block" role="search">
+        <form onSubmit={submit} className="ml-auto hidden min-w-[150px] max-w-xs flex-1 md:block" role="search">
           <label className="relative block">
             <span className="sr-only">Buscar soluções</span>
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-stone-500" />
@@ -145,13 +145,13 @@ function Header() {
               <LinkButton to="/cadastro" variant="primary" size="sm">Criar conta</LinkButton>
             </div>
           )}
-          <button className="rounded-xl p-2.5 text-stone-700 hover:bg-stone-100 lg:hidden" onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
+          <button className="rounded-xl p-2.5 text-stone-700 hover:bg-stone-100 xl:hidden" onClick={() => setOpen((o) => !o)} aria-label="Menu" aria-expanded={open}>
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
       </div>
       {open && (
-        <div className="border-t border-stone-200 bg-white px-4 pb-4 pt-2 lg:hidden">
+        <div className="border-t border-stone-200 bg-white px-4 pb-4 pt-2 xl:hidden">
           <form onSubmit={submit} className="mb-2 md:hidden" role="search">
             <label className="relative block">
               <span className="sr-only">Buscar soluções</span>
@@ -201,7 +201,7 @@ function Footer() {
           <h3 className="font-bold text-white">Produtor rural</h3>
           <ul className="mt-3 space-y-2 text-sm">
             <li><Link className="hover:text-white" to="/catalogo">Buscar soluções</Link></li>
-            <li><Link className="hover:text-white" to="/tenho-uma-dor">Tenho uma dor</Link></li>
+            <li><Link className="hover:text-white" to="/tenho-uma-dor">Pedir uma solução</Link></li>
             <li><Link className="hover:text-white" to="/empresas">Encontrar empresas</Link></li>
             <li><Link className="hover:text-white" to="/guia-materiais">Guia de materiais</Link></li>
           </ul>
@@ -237,7 +237,7 @@ function MobileTabBar() {
       ? [{ to: '/painel/oportunidades', label: 'Oportunidades', icon: Lightbulb, end: false }]
       : user?.tipo === 'admin'
         ? [{ to: '/admin/moderacao', label: 'Moderação', icon: ShieldCheck, end: false }]
-        : [{ to: '/tenho-uma-dor', label: 'Tenho uma dor', icon: Siren, end: false }]),
+        : [{ to: '/tenho-uma-dor', label: 'Pedir uma solução', icon: Siren, end: false }]),
     { to: '/empresas', label: 'Empresas', icon: Building2 },
     { to: user ? '/painel' : '/entrar', label: user ? 'Painel' : 'Entrar', icon: UserIcon },
   ]

@@ -61,7 +61,7 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <LinkButton to="/tenho-uma-dor" variant="sun" size="lg">
-                <Siren className="h-5 w-5" /> Não encontrou? Tenho uma dor
+                <Siren className="h-5 w-5" /> Não encontrou? Pedir uma solução
               </LinkButton>
               {!user && (
                 <Link to="/cadastro?tipo=empresa" className="font-semibold text-campo-100 underline-offset-4 hover:underline">
@@ -111,7 +111,7 @@ export default function Home() {
           <Card className="border-sol-300 bg-sol-300/10 p-6">
             <div className="flex items-center gap-3">
               <span className="rounded-xl bg-sol-400 p-2.5 text-stone-900"><Siren className="h-6 w-6" aria-hidden /></span>
-              <h3 className="text-xl font-bold text-stone-900">Ainda não existe, “Tenho uma dor”</h3>
+              <h3 className="text-xl font-bold text-stone-900">Ainda não existe, “Pedir uma solução”</h3>
             </div>
             <ol className="mt-5 space-y-4">
               {['Conte o problema com fotos, sem precisar de termos técnicos', 'Empresas compatíveis são avisadas automaticamente', 'Receba propostas com material, prazo e preço', 'Escolha, converse e resolva o problema'].map((t, i) => (

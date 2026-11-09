@@ -48,7 +48,7 @@ Para voltar aos dados iniciais: **Minha conta → Restaurar dados de demonstraç
 A plataforma tem dois fluxos principais:
 
 ```text
-JÁ EXISTE UMA SOLUÇÃO                     AINDA NÃO EXISTE — "TENHO UMA DOR"
+JÁ EXISTE UMA SOLUÇÃO                     AINDA NÃO EXISTE — "PEDIR UMA SOLUÇÃO"
 Produtor pesquisa no catálogo             Produtor publica o problema
         ↓                                         ↓
 Compara ficha técnica e avaliações        Empresas compatíveis são avisadas
@@ -78,7 +78,7 @@ Produtor avalia a empresa                 Solução pode virar produto do catál
 - **Guia de materiais:** PLA, PETG, ABS, ASA, Nylon, TPU, PC e resina. Mostra resistência ao sol, ao calor, mecânica e a produtos químicos, além de quando usar e quando evitar cada um.
 - **Páginas institucionais:** como funciona, planos, significado do selo de empresa verificada, termos de uso e política de privacidade (LGPD).
 
-### 🩹 "Tenho uma dor"
+### 🩹 "Pedir uma solução"
 
 - Publicação de uma necessidade em **até 4 etapas**: problema, fotos/vídeos, detalhes e revisão.
 - Dá para **começar sem login**. O rascunho fica salvo e a conta é pedida só na hora de publicar.

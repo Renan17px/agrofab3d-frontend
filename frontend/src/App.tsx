@@ -62,7 +62,7 @@ export default function App() {
         <Route path="privacidade" element={<Privacy />} />
         <Route path="entrar" element={<Login />} />
         <Route path="cadastro" element={<Register />} />
-        {/* "Tenho uma dor" pode ser iniciado sem login, o login é pedido só na publicação */}
+        {/* "Pedir uma solução" pode ser iniciado sem login, o login é pedido só na publicação */}
         <Route path="tenho-uma-dor" element={<PainWizard />} />
 
         {/* Área logada */}

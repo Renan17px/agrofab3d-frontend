@@ -25,10 +25,17 @@ import { compressImage, kb } from '@/lib/image'
 import { Avatar, Badge, Button, Card, Field, Modal, Select, StarInput, Stars, Textarea, cx, useToast } from './ui'
 
 // ---------- Marca ----------
-export function Logo({ light, size = 44 }: { light?: boolean; size?: number }) {
+export function Logo({ light, size = 44, withName }: { light?: boolean; size?: number; withName?: boolean }) {
   return (
-    <span className={cx('inline-flex items-center justify-center', light && 'rounded-xl bg-white p-1.5')}>
-      <img src="/logo-192.png" alt="AgroFab3D" width={size} height={size} style={{ width: size, height: size }} />
+    <span className="inline-flex items-center gap-2">
+      <span className={cx('inline-flex items-center justify-center', light && 'rounded-xl bg-white p-1.5')}>
+        <img src="/logo-192.png" alt={withName ? '' : 'AgroFab3D'} width={size} height={size} style={{ width: size, height: size }} />
+      </span>
+      {withName && (
+        <span className={cx('text-xl font-extrabold tracking-tight', light ? 'text-white' : 'text-campo-900')}>
+          AgroFab<span className={light ? 'text-sol-300' : 'text-campo-600'}>3D</span>
+        </span>
+      )}
     </span>
   )
 }
