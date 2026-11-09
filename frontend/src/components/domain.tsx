@@ -25,18 +25,10 @@ import { compressImage, kb } from '@/lib/image'
 import { Avatar, Badge, Button, Card, Field, Modal, Select, StarInput, Stars, Textarea, cx, useToast } from './ui'
 
 // ---------- Marca ----------
-export function Logo({ light }: { light?: boolean }) {
+export function Logo({ light, size = 44 }: { light?: boolean; size?: number }) {
   return (
-    <span className="inline-flex items-center gap-2">
-      <svg viewBox="0 0 64 64" className="h-9 w-9" aria-hidden>
-        <rect width="64" height="64" rx="14" fill={light ? '#ffffff' : '#245933'} />
-        <path d="M32 12 50 22v20L32 52 14 42V22z" fill="none" stroke={light ? '#245933' : '#f9c637'} strokeWidth="4" strokeLinejoin="round" />
-        <path d="M32 32V52M32 32 14 22M32 32l18-10" stroke={light ? '#245933' : '#f9c637'} strokeWidth="3" strokeLinejoin="round" />
-        <path d="M32 30c-6-1-9-6-8-12 6 0 9 5 8 12z" fill="#5ea86e" />
-      </svg>
-      <span className={cx('text-lg font-extrabold tracking-tight', light ? 'text-white' : 'text-campo-900')}>
-        AgroFab<span className={light ? 'text-sol-300' : 'text-terra-600'}>3D</span>
-      </span>
+    <span className={cx('inline-flex items-center justify-center', light && 'rounded-xl bg-white p-1.5')}>
+      <img src="/logo-192.png" alt="AgroFab3D" width={size} height={size} style={{ width: size, height: size }} />
     </span>
   )
 }
@@ -227,7 +219,7 @@ export function CompanyCard({ company }: { company: Company }) {
         <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-3 text-sm">
           <span className="flex items-center gap-1.5">
             <Stars value={r.geral} size={14} />
-            <span className="text-stone-700">{r.total ? r.geral.toFixed(1) : '—'}</span>
+            <span className="text-stone-700">{r.total ? r.geral.toFixed(1) : '-'}</span>
             <span className="text-stone-600">({r.total})</span>
           </span>
           <span className="text-stone-700">{nParts} peças</span>
@@ -469,7 +461,7 @@ export function RatingSummary({ companyId }: { companyId: string }) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
       <div className="text-center sm:w-32">
-        <div className="text-4xl font-extrabold text-stone-900">{r.total ? r.geral.toFixed(1) : '—'}</div>
+        <div className="text-4xl font-extrabold text-stone-900">{r.total ? r.geral.toFixed(1) : '-'}</div>
         <Stars value={r.geral} />
         <div className="text-xs text-stone-600">{r.total} avaliações</div>
       </div>
@@ -480,7 +472,7 @@ export function RatingSummary({ companyId }: { companyId: string }) {
             <div className="h-2.5 flex-1 overflow-hidden rounded-full bg-stone-100">
               <div className="h-full rounded-full bg-sol-400" style={{ width: `${(v / 5) * 100}%` }} />
             </div>
-            <span className="w-8 text-right font-semibold text-stone-900">{v ? v.toFixed(1) : '—'}</span>
+            <span className="w-8 text-right font-semibold text-stone-900">{v ? v.toFixed(1) : '-'}</span>
           </div>
         ))}
       </div>

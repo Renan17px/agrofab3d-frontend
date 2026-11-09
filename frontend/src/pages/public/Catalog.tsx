@@ -130,7 +130,7 @@ export default function Catalog() {
     <Container>
       <div className="mb-6">
         <h1 className="text-2xl font-extrabold tracking-tight text-stone-900 sm:text-3xl">Catálogo técnico</h1>
-        <p className="mt-1 text-stone-600">Descreva o problema com suas palavras — não precisa saber o nome técnico ou o código da peça.</p>
+        <p className="mt-1 text-stone-600">Descreva o problema com suas palavras, não precisa saber o nome técnico ou o código da peça.</p>
       </div>
       <form
         onSubmit={(e) => {

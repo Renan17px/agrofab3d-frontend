@@ -127,10 +127,10 @@ export function ProducerPainDetail() {
         {pain.imagens.length > 0 && <div className="mt-4 flex gap-2 overflow-x-auto">{pain.imagens.map((src, i) => <img key={i} src={src} alt={`Foto ${i + 1}`} className="h-28 w-28 shrink-0 rounded-xl object-cover" />)}</div>}
         {pain.videos.length > 0 && <div className="mt-2 flex flex-wrap gap-2">{pain.videos.map((v) => <Badge key={v}><Film className="h-3 w-3" />{v}</Badge>)}</div>}
         <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2 lg:grid-cols-4">
-          <div><dt className="text-stone-600">Máquina</dt><dd className="font-medium text-stone-900">{[pain.maquina, pain.fabricante, pain.modelo].filter(Boolean).join(' · ') || '—'}</dd></div>
+          <div><dt className="text-stone-600">Máquina</dt><dd className="font-medium text-stone-900">{[pain.maquina, pain.fabricante, pain.modelo].filter(Boolean).join(' · ') || '-'}</dd></div>
           <div><dt className="text-stone-600">Quantidade</dt><dd className="font-medium text-stone-900">{pain.quantidade} un.</dd></div>
           <div><dt className="text-stone-600">Local</dt><dd className="font-medium text-stone-900">{pain.cidade}/{pain.uf}</dd></div>
-          <div><dt className="text-stone-600">Prazo desejado</dt><dd className="font-medium text-stone-900">{pain.prazoDesejado ? dateBR(pain.prazoDesejado + 'T12:00:00') : '—'}</dd></div>
+          <div><dt className="text-stone-600">Prazo desejado</dt><dd className="font-medium text-stone-900">{pain.prazoDesejado ? dateBR(pain.prazoDesejado + 'T12:00:00') : '-'}</dd></div>
         </dl>
         {pain.condicoes.length > 0 && (
           <div className="mt-4 flex flex-wrap items-center gap-1.5 text-sm">
@@ -166,7 +166,7 @@ export function ProducerPainDetail() {
                     <div className="min-w-0">
                       <div className="truncate font-bold text-stone-900">{c.nome}</div>
                       <div className="flex items-center gap-1 text-xs text-stone-600"><MapPin className="h-3 w-3" />{c.cidade}/{c.uf}</div>
-                      <div className="flex items-center gap-1 text-xs"><Stars value={r.geral} size={12} /> {r.total ? r.geral.toFixed(1) : '—'}</div>
+                      <div className="flex items-center gap-1 text-xs"><Stars value={r.geral} size={12} /> {r.total ? r.geral.toFixed(1) : '-'}</div>
                     </div>
                   </Link>
                   <div className="min-w-0 flex-1">
@@ -181,7 +181,7 @@ export function ProducerPainDetail() {
                         <div className="text-xs font-bold uppercase tracking-wide text-stone-600">Proposta</div>
                         <p className="mt-1 text-sm text-stone-900">{i.proposta.solucao}</p>
                         <dl className="mt-3 grid grid-cols-2 gap-3 text-sm sm:grid-cols-4">
-                          <div><dt className="text-stone-600">Material</dt><dd>{i.proposta.material ? <MaterialChip id={i.proposta.material} /> : '—'}</dd></div>
+                          <div><dt className="text-stone-600">Material</dt><dd>{i.proposta.material ? <MaterialChip id={i.proposta.material} /> : '-'}</dd></div>
                           <div><dt className="text-stone-600">Prazo</dt><dd className="font-semibold text-stone-900">{i.proposta.prazoDias ? `${i.proposta.prazoDias} dias` : 'A definir'}</dd></div>
                           <div><dt className="text-stone-600">Preço aprox.</dt><dd className="font-semibold text-stone-900">{priceLabel(i.proposta.preco)}</dd></div>
                           <div><dt className="text-stone-600">Viabilidade</dt><dd className="text-xs font-medium text-stone-900">{VIABILIDADE_LABEL[i.proposta.viabilidade]}</dd></div>
@@ -223,7 +223,7 @@ export function ProducerPainDetail() {
       {ativa && compat.length > 0 && (
         <section className="mt-8">
           <h2 className="mb-1 text-lg font-bold text-stone-900">Empresas compatíveis com sua dor</h2>
-          <p className="mb-3 text-sm text-stone-600">Sugestões automáticas por segmento, material e região. Elas já foram avisadas — você também pode chamá-las diretamente.</p>
+          <p className="mb-3 text-sm text-stone-600">Sugestões automáticas por segmento, material e região. Elas já foram avisadas, você também pode chamá-las diretamente.</p>
           <div className="grid gap-3 md:grid-cols-3">
             {compat.map(({ c }) => (
               <Card key={c.id} className="p-4">

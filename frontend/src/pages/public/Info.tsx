@@ -103,7 +103,7 @@ export function MaterialGuide() {
 export function VerifiedSeal() {
   return (
     <Container>
-      <PageHeader title="Selo de Empresa Verificada" subtitle="Entenda o que o selo significa — e o que ele não significa." />
+      <PageHeader title="Selo de Empresa Verificada" subtitle="Entenda o que o selo significa, e o que ele não significa." />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Card className="p-6">
           <h2 className="flex items-center gap-2 text-lg font-bold text-stone-900"><BadgeCheck className="h-6 w-6 text-sky-700" /> O que verificamos</h2>
@@ -131,7 +131,7 @@ export function VerifiedSeal() {
 export function Terms() {
   return (
     <Container>
-      <PageHeader title="Termos de uso" subtitle="Versão de demonstração — texto ilustrativo para o protótipo." />
+      <PageHeader title="Termos de uso" subtitle="Versão de demonstração, texto ilustrativo para o protótipo." />
       <Card className="max-w-3xl space-y-5 p-6 text-stone-800">
         <section>
           <h2 className="font-bold text-stone-900">1. Papel da plataforma</h2>

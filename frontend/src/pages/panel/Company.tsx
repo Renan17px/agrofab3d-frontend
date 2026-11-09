@@ -85,9 +85,9 @@ export function CompanyHome() {
       <StatusBanner />
       <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
         <Stat label="Peças ativas" value={parts.filter((p) => p.ativo).length} icon={<Package className="h-5 w-5" />} hint={plan.limitePecas ? `de ${plan.limitePecas} no plano` : 'ilimitadas'} />
-        <Stat label="Visualizações" value={plan.estatisticas === 'nenhuma' ? '—' : views} icon={<Eye className="h-5 w-5" />} hint={plan.estatisticas === 'nenhuma' ? 'Disponível no Profissional' : 'total do catálogo'} />
+        <Stat label="Visualizações" value={plan.estatisticas === 'nenhuma' ? '-' : views} icon={<Eye className="h-5 w-5" />} hint={plan.estatisticas === 'nenhuma' ? 'Disponível no Profissional' : 'total do catálogo'} />
         <Stat label="Orçamentos novos" value={quotesNew.length} icon={<ClipboardList className="h-5 w-5" />} />
-        <Stat label="Avaliação" value={r.total ? r.geral.toFixed(1) : '—'} icon={<Star className="h-5 w-5" />} hint={`${r.total} avaliações`} />
+        <Stat label="Avaliação" value={r.total ? r.geral.toFixed(1) : '-'} icon={<Star className="h-5 w-5" />} hint={`${r.total} avaliações`} />
       </div>
 
       {quotesNew.length > 0 && (
@@ -188,7 +188,7 @@ export function CompanyProfileForm() {
           <Field label="Descrição" required error={errors.descricao} htmlFor="c-desc"><Textarea id="c-desc" value={f.descricao} onChange={(e) => set('descricao', e.target.value)} placeholder="O que vocês fazem, para quem e qual o diferencial" /></Field>
           <div className="grid grid-cols-[1fr_100px] gap-3">
             <Field label="Cidade" required error={errors.local} htmlFor="c-cid"><Input id="c-cid" value={f.cidade} onChange={(e) => set('cidade', e.target.value)} /></Field>
-            <Field label="UF" required htmlFor="c-uf"><Select id="c-uf" value={f.uf} onChange={(e) => set('uf', e.target.value)}><option value="">—</option>{UFS.map((u) => <option key={u}>{u}</option>)}</Select></Field>
+            <Field label="UF" required htmlFor="c-uf"><Select id="c-uf" value={f.uf} onChange={(e) => set('uf', e.target.value)}><option value="">-</option>{UFS.map((u) => <option key={u}>{u}</option>)}</Select></Field>
           </div>
           <Field label="Experiência" htmlFor="c-exp"><Input id="c-exp" value={f.experiencia} onChange={(e) => set('experiencia', e.target.value)} placeholder="Ex.: 5 anos com impressão 3D, 2 no agro" /></Field>
         </Card>
@@ -378,7 +378,7 @@ export function PartForm() {
           <h2 className="font-bold text-stone-900">Especificações técnicas</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Material" required htmlFor="p-mat" hint={MATERIALS.find((m) => m.id === f.material)?.indicado}>
-              <Select id="p-mat" value={f.material} onChange={(e) => set('material', e.target.value as MaterialId)}>{MATERIALS.map((m) => <option key={m.id} value={m.id}>{m.nome} — até ~{m.tempMax} °C</option>)}</Select>
+              <Select id="p-mat" value={f.material} onChange={(e) => set('material', e.target.value as MaterialId)}>{MATERIALS.map((m) => <option key={m.id} value={m.id}>{m.nome}, até ~{m.tempMax} °C</option>)}</Select>
             </Field>
             <Field label="Dimensões" required error={errors.dimensoes} htmlFor="p-dim"><Input id="p-dim" value={f.dimensoes} onChange={(e) => set('dimensoes', e.target.value)} placeholder="Ex.: 120 × 45 × 38 mm" /></Field>
             <Field label="Equipamento compatível" required error={errors.equipamento} htmlFor="p-eq"><Input id="p-eq" value={f.equipamento} onChange={(e) => set('equipamento', e.target.value)} placeholder="Ex.: Pulverizador autopropelido" /></Field>
@@ -556,7 +556,7 @@ export function OpportunityDetail() {
             <p className="mt-2 whitespace-pre-line text-stone-800">{pain.descricao}</p>
             {pain.imagens.length > 0 && <div className="mt-4 flex gap-2 overflow-x-auto">{pain.imagens.map((src, i) => <img key={i} src={src} alt={`Foto ${i + 1}`} className="h-28 w-28 shrink-0 rounded-xl object-cover" />)}</div>}
             <dl className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-              <div><dt className="text-stone-600">Máquina / equipamento</dt><dd className="font-medium text-stone-900">{[pain.maquina, pain.fabricante, pain.modelo].filter(Boolean).join(' · ') || '—'}</dd></div>
+              <div><dt className="text-stone-600">Máquina / equipamento</dt><dd className="font-medium text-stone-900">{[pain.maquina, pain.fabricante, pain.modelo].filter(Boolean).join(' · ') || '-'}</dd></div>
               <div><dt className="text-stone-600">Quantidade</dt><dd className="font-medium text-stone-900">{pain.quantidade} un.</dd></div>
               <div><dt className="text-stone-600">Localização</dt><dd className="flex items-center gap-1 font-medium text-stone-900"><MapPin className="h-4 w-4" />{pain.cidade}/{pain.uf}</dd></div>
               <div><dt className="text-stone-600">Prazo desejado</dt><dd className="font-medium text-stone-900">{pain.prazoDesejado ? dateBR(pain.prazoDesejado + 'T12:00:00') : 'Não informado'}</dd></div>
@@ -650,7 +650,7 @@ export function OpportunityDetail() {
           )}
           <Card className="p-5 text-sm text-stone-700">
             <h2 className="mb-1 font-bold text-stone-900">Privacidade do produtor</h2>
-            O contato do produtor é liberado somente quando ele aceita conversar com sua empresa. Publicado por {produtor?.nome.split(' ')[0]} — {pain.cidade}/{pain.uf}.
+            O contato do produtor é liberado somente quando ele aceita conversar com sua empresa. Publicado por {produtor?.nome.split(' ')[0]}, {pain.cidade}/{pain.uf}.
           </Card>
         </aside>
       </div>
@@ -729,7 +729,7 @@ export function CompanyQuotes() {
                   <div className="min-w-0 flex-1">
                     <div className="flex flex-wrap items-center gap-2"><QuoteStatusBadge status={q.status} /><span className="text-xs text-stone-600">{timeAgo(q.criadoEm)}</span></div>
                     <div className="mt-1 font-bold text-stone-900">{part?.nome} · {q.quantidade} un.</div>
-                    <div className="text-sm text-stone-600">{prod?.nome} — {prod?.cidade}/{prod?.uf}</div>
+                    <div className="text-sm text-stone-600">{prod?.nome}, {prod?.cidade}/{prod?.uf}</div>
                     {q.mensagem && <p className="mt-1 text-sm text-stone-800">“{q.mensagem}”</p>}
                     {q.resposta && <p className="mt-2 rounded-lg bg-stone-50 p-2 text-sm text-stone-700"><strong>Sua resposta:</strong> {q.resposta.texto} · {priceLabel(q.resposta.preco)}{q.resposta.prazoDias ? ` · ${q.resposta.prazoDias} dias` : ''}</p>}
                     {/* O contato do produtor é liberado porque ele próprio iniciou o pedido de orçamento */}

@@ -108,7 +108,7 @@ function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-stone-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4">
-        <Link to="/" aria-label="AgroFab3D — início" className="shrink-0">
+        <Link to="/" aria-label="AgroFab3D, início" className="shrink-0">
           <Logo />
         </Link>
         <nav className="ml-4 hidden items-center gap-1 lg:flex" aria-label="Principal">
@@ -117,6 +117,11 @@ function Header() {
               {n.label}
             </NavLink>
           ))}
+          {(!user || user.tipo === 'produtor') && (
+            <LinkButton to="/tenho-uma-dor" variant="sun" size="sm" className="ml-1">
+              <Siren className="h-4 w-4" /> Pedir uma solução
+            </LinkButton>
+          )}
         </nav>
         <form onSubmit={submit} className="ml-auto hidden max-w-xs flex-1 md:block" role="search">
           <label className="relative block">
@@ -126,11 +131,6 @@ function Header() {
           </label>
         </form>
         <div className="ml-auto flex items-center gap-1 md:ml-2">
-          {(!user || user.tipo === 'produtor') && (
-            <LinkButton to="/tenho-uma-dor" variant="sun" size="sm" className="hidden sm:inline-flex">
-              <Siren className="h-4 w-4" /> Tenho uma dor
-            </LinkButton>
-          )}
           {user ? (
             <>
               <Notifications />
@@ -165,6 +165,11 @@ function Header() {
                 {n.label}
               </NavLink>
             ))}
+            {(!user || user.tipo === 'produtor') && (
+              <LinkButton to="/tenho-uma-dor" variant="sun" className="my-1">
+                <Siren className="h-4 w-4" /> Pedir uma solução
+              </LinkButton>
+            )}
             {user ? (
               <>
                 <NavLink to="/painel" className="rounded-lg px-2 py-3 font-semibold text-stone-800 hover:bg-stone-50">Meu painel</NavLink>
@@ -218,7 +223,7 @@ function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-campo-900 py-4 text-center text-xs text-campo-300">© {new Date().getFullYear()} AgroFab3D — Protótipo de interface (dados fictícios)</div>
+      <div className="border-t border-campo-900 py-4 text-center text-xs text-campo-300">© {new Date().getFullYear()} AgroFab3D, Protótipo de interface (dados fictícios)</div>
     </footer>
   )
 }

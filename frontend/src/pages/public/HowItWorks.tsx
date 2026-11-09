@@ -27,7 +27,7 @@ export default function HowItWorks() {
       <PageHeader title="Como funciona o AgroFab3D" subtitle="Um marketplace B2B que conecta quem tem o problema a quem tem a capacidade de resolvê-lo." />
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <Card className="p-6">
-          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 1 — Peça já existe no catálogo</h2>
+          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 1, Peça já existe no catálogo</h2>
           <Flow
             steps={[
               { icon: FileSearch, t: 'Produtor pesquisa', d: 'Busca pelo problema, sem precisar do código da peça.' },
@@ -39,10 +39,10 @@ export default function HowItWorks() {
           />
         </Card>
         <Card className="p-6">
-          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 2 — “Tenho uma dor”</h2>
+          <h2 className="mb-4 text-xl font-bold text-stone-900">Fluxo 2, “Tenho uma dor”</h2>
           <Flow
             steps={[
-              { icon: Siren, t: 'Produtor publica a dor', d: 'Fotos, máquina, quantidade, local e prazo — o que souber.' },
+              { icon: Siren, t: 'Produtor publica a dor', d: 'Fotos, máquina, quantidade, local e prazo, o que souber.' },
               { icon: Lightbulb, t: 'Empresas compatíveis são avisadas', d: 'Correspondência por segmento, material e região.' },
               { icon: Handshake, t: 'Empresas enviam propostas', d: 'Solução, material, prazo, preço e viabilidade técnica.' },
               { icon: Tractor, t: 'Produtor escolhe e conversa', d: 'O contato é liberado para a empresa escolhida.' },

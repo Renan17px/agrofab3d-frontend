@@ -14,7 +14,7 @@ export const CATEGORIES: { id: CategoryId; label: string; descricao: string }[] 
 
 export const categoryLabel = (id: CategoryId) => CATEGORIES.find((c) => c.id === id)?.label ?? id
 
-// Guia de materiais — atende ao feedback do Empresário 2 sobre a escolha adequada do material.
+// Guia de materiais, atende ao feedback do Empresário 2 sobre a escolha adequada do material.
 export interface MaterialInfo {
   id: MaterialId
   nome: string
@@ -39,7 +39,7 @@ export const MATERIALS: MaterialInfo[] = [
     flexibilidade: 1,
     quimicos: 1,
     indicado: 'Protótipos, testes de encaixe, peças de uso interno.',
-    evitar: 'Sol direto, cabine de máquina e locais quentes — deforma com calor.',
+    evitar: 'Sol direto, cabine de máquina e locais quentes, deforma com calor.',
   },
   {
     id: 'PETG',
@@ -111,7 +111,7 @@ export const MATERIALS: MaterialInfo[] = [
     flexibilidade: 1,
     quimicos: 2,
     indicado: 'Peças estruturais, proteções transparentes, ambientes quentes.',
-    evitar: 'Projetos simples — é mais caro e difícil de imprimir.',
+    evitar: 'Projetos simples, é mais caro e difícil de imprimir.',
   },
   {
     id: 'Resina',

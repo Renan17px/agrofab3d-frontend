@@ -28,13 +28,13 @@ import { matchScore } from '@/lib/match'
  * Camada de dados SIMULADA (somente frontend).
  *
  * Toda a "persistência" fica no localStorage do navegador. Cada ação aqui corresponde a um
- * endpoint que o backend deverá expor no futuro (RNF-010 — arquitetura desacoplada via API).
+ * endpoint que o backend deverá expor no futuro (RNF-010, arquitetura desacoplada via API).
  * Para integrar com o backend real, basta substituir o corpo destas ações por chamadas HTTP.
  */
 
 const DB_KEY = 'agrofab3d:db'
 const SESSION_KEY = 'agrofab3d:session'
-const DB_VERSION = 1
+const DB_VERSION = 2
 
 const uid = (p: string) => `${p}${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`
 const now = () => new Date().toISOString()
@@ -47,7 +47,7 @@ function loadDb(): DB {
       if (parsed.versao === DB_VERSION) return parsed
     }
   } catch {
-    /* ignora — recria a base de demonstração */
+    /* ignora, recria a base de demonstração */
   }
   return createSeed()
 }
@@ -92,7 +92,7 @@ function useStoreValue() {
     try {
       localStorage.setItem(DB_KEY, JSON.stringify(db))
     } catch {
-      /* quota excedida (ex.: muitas imagens) — mantém em memória */
+      /* quota excedida (ex.: muitas imagens), mantém em memória */
     }
   }, [db])
 
@@ -153,7 +153,7 @@ function useStoreValue() {
         cidade: input.cidade,
         uf: input.uf,
         criadoEm: now(),
-        termosAceitosEm: now(), // RNF-016 — no backend real: + IP
+        termosAceitosEm: now(), // RNF-016, no backend real: + IP
       }
       mutate((d) => {
         d.users.push(u)
@@ -218,7 +218,7 @@ function useStoreValue() {
           if (cnpjChanged && c.verificada) {
             c.verificada = false
             c.status = 'pendente'
-            c.motivoStatus = 'CNPJ alterado — nova verificação necessária.'
+            c.motivoStatus = 'CNPJ alterado, nova verificação necessária.'
           }
           saved = c
           audit(d, 'Perfil empresarial atualizado', c.id, cnpjChanged ? 'CNPJ alterado' : 'Dados atualizados')
@@ -291,7 +291,7 @@ function useStoreValue() {
           Object.assign(p, data)
           saved = p
           audit(d, 'Peça editada', p.id, p.nome)
-          if (origemMudou) audit(d, 'Licença registrada', p.id, `${data.origem.tipo} — ${data.origem.licenca ?? 'própria'}`)
+          if (origemMudou) audit(d, 'Licença registrada', p.id, `${data.origem.tipo}, ${data.origem.licenca ?? 'própria'}`)
         } else {
           const p: Part = {
             ...data,
@@ -306,12 +306,12 @@ function useStoreValue() {
           d.parts.unshift(p)
           saved = p
           audit(d, 'Peça cadastrada', p.id, p.nome)
-          if (p.origem.tipo !== 'proprio') audit(d, 'Licença registrada', p.id, `${p.origem.tipo} — ${p.origem.licenca}`)
+          if (p.origem.tipo !== 'proprio') audit(d, 'Licença registrada', p.id, `${p.origem.tipo}, ${p.origem.licenca}`)
         }
       })
       return ok(saved)
     },
-    // RN-016 / RNF-009 — nova versão é adicionada, nunca sobrescreve as anteriores
+    // RN-016 / RNF-009, nova versão é adicionada, nunca sobrescreve as anteriores
     addVersion(partId: string, descricao: string, arquivoModelo?: string): Result<PartVersion> {
       const p = dbRef.current.parts.find((x) => x.id === partId)
       if (!p || p.companyId !== company?.id) return fail('Peça não encontrada.')
@@ -319,7 +319,7 @@ function useStoreValue() {
       const v: PartVersion = { versao: `V${n}`, descricao, data: now(), arquivoModelo, autorId: user?.id }
       mutate((d) => {
         d.parts.find((x) => x.id === partId)!.versoes.push(v)
-        audit(d, 'Nova versão', partId, `${v.versao} — ${descricao}`)
+        audit(d, 'Nova versão', partId, `${v.versao}, ${descricao}`)
       })
       return ok(v)
     },

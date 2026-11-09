@@ -9,7 +9,7 @@ export const DEMO_PASSWORD = 'agro123'
 
 export function createSeed(): DB {
   return {
-    versao: 1,
+    versao: 2,
     plans: DEFAULT_PLANS.map((p) => ({ ...p, recursos: [...p.recursos] })),
     users: [
       { id: 'u1', nome: 'João Pereira', email: 'produtor@agrofab3d.com', senha: DEMO_PASSWORD, tipo: 'produtor', status: 'ativo', telefone: '(45) 99812-3344', cidade: 'Cascavel', uf: 'PR', criadoEm: ago(120), termosAceitosEm: ago(120) },
@@ -124,7 +124,7 @@ export function createSeed(): DB {
       {
         id: 'p4', companyId: 'c4', nome: 'Engrenagem do medidor de sementes',
         descricao: 'Engrenagem de reposição para o kit de distribuição de sementes de plantadeiras. Peça original fora de linha.',
-        categoria: 'maquinas', aplicacao: 'Plantio — distribuição de sementes', material: 'Nylon', dimensoes: 'Ø 64 mm, 32 dentes',
+        categoria: 'maquinas', aplicacao: 'Plantio, distribuição de sementes', material: 'Nylon', dimensoes: 'Ø 64 mm, 32 dentes',
         equipamento: 'Plantadeira', fabricante: 'Diversos', modelo: 'Linhas de plantio a vácuo (consultar)', temperatura: 'até 100 °C',
         prazoDias: 6, preco: 140, imagens: [],
         versoes: [
@@ -271,14 +271,14 @@ export function createSeed(): DB {
       {
         id: 'd6', produtorId: 'u9', titulo: 'Cabo para trado de coleta de solo',
         descricao: 'Preciso de um cabo mais ergonômico para o trado de amostragem de solo. O atual machuca a mão em dias de muitas coletas.',
-        categoria: 'ferramentas', imagens: [], videos: [], maquina: 'Trado manual', fabricante: '—', modelo: 'Haste de 1"',
+        categoria: 'ferramentas', imagens: [], videos: [], maquina: 'Trado manual', fabricante: '-', modelo: 'Haste de 1"',
         quantidade: 3, cidade: 'Cruz Alta', uf: 'RS', condicoes: ['impacto'],
         status: 'aberta', criadoEm: ago(8), atualizadoEm: ago(8),
       },
       {
         id: 'd7', produtorId: 'u1', titulo: 'Suporte de lanterna para galpão',
         descricao: 'Suporte simples para pendurar lanterna no galpão de máquinas.',
-        categoria: 'armazenamento', imagens: [], videos: [], maquina: '—', fabricante: '—', modelo: '—',
+        categoria: 'armazenamento', imagens: [], videos: [], maquina: '-', fabricante: '-', modelo: '-',
         quantidade: 2, cidade: 'Cascavel', uf: 'PR', condicoes: [],
         status: 'encerrada', criadoEm: ago(40), atualizadoEm: ago(30),
       },
@@ -340,10 +340,10 @@ export function createSeed(): DB {
       { id: 'n6', userId: 'u3', texto: '2 empresas aguardando análise de cadastro.', link: '/admin/empresas', lida: false, criadoEm: ago(3) },
     ],
     audit: [
-      { id: 'a1', userId: 'u2', acao: 'Nova versão', alvo: 'p1', detalhe: 'V2 — Estrutura reforçada nas abas de fixação', data: ago(90) },
-      { id: 'a2', userId: 'u2', acao: 'Nova versão', alvo: 'p1', detalhe: 'V3 — Novo encaixe + estrutura reforçada', data: ago(20) },
-      { id: 'a3', userId: 'u6', acao: 'Licença registrada', alvo: 'p2', detalhe: 'Printables — CC BY 4.0', data: ago(70) },
-      { id: 'a4', userId: 'u6', acao: 'Nova versão', alvo: 'p2', detalhe: 'V2 — Inclusão de dreno e reforço contra impacto', data: ago(15) },
+      { id: 'a1', userId: 'u2', acao: 'Nova versão', alvo: 'p1', detalhe: 'V2, Estrutura reforçada nas abas de fixação', data: ago(90) },
+      { id: 'a2', userId: 'u2', acao: 'Nova versão', alvo: 'p1', detalhe: 'V3, Novo encaixe + estrutura reforçada', data: ago(20) },
+      { id: 'a3', userId: 'u6', acao: 'Licença registrada', alvo: 'p2', detalhe: 'Printables, CC BY 4.0', data: ago(70) },
+      { id: 'a4', userId: 'u6', acao: 'Nova versão', alvo: 'p2', detalhe: 'V2, Inclusão de dreno e reforço contra impacto', data: ago(15) },
       { id: 'a5', userId: 'u3', acao: 'Empresa aprovada', alvo: 'c4', detalhe: 'Cadastro aprovado e selo concedido', data: ago(100) },
     ],
   }

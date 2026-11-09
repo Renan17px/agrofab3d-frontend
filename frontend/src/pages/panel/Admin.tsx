@@ -54,7 +54,7 @@ export function AdminHome() {
           <h2 className="mb-3 font-bold text-stone-900">Atividade recente</h2>
           <ul className="space-y-2 text-sm">
             {db.audit.slice(0, 6).map((a) => (
-              <li key={a.id} className="flex justify-between gap-3"><span className="text-stone-800"><strong>{a.acao}</strong> — {a.detalhe}</span><span className="shrink-0 text-xs text-stone-600">{timeAgo(a.data)}</span></li>
+              <li key={a.id} className="flex justify-between gap-3"><span className="text-stone-800"><strong>{a.acao}</strong>, {a.detalhe}</span><span className="shrink-0 text-xs text-stone-600">{timeAgo(a.data)}</span></li>
             ))}
           </ul>
         </Card>
@@ -144,7 +144,7 @@ export function AdminCompanies() {
               <div><dt className="text-stone-600">CNPJ</dt><dd className="font-semibold text-stone-900">{c.cnpj}</dd></div>
               <div><dt className="text-stone-600">Localização</dt><dd className="font-semibold text-stone-900">{c.cidade}/{c.uf}</dd></div>
               <div><dt className="text-stone-600">Responsável</dt><dd className="font-semibold text-stone-900">{owner?.nome} · {owner?.email}</dd></div>
-              <div><dt className="text-stone-600">Experiência</dt><dd className="text-stone-900">{c.experiencia || '—'}</dd></div>
+              <div><dt className="text-stone-600">Experiência</dt><dd className="text-stone-900">{c.experiencia || '-'}</dd></div>
               <div className="sm:col-span-2"><dt className="text-stone-600">Descrição</dt><dd className="text-stone-900">{c.descricao}</dd></div>
               <div className="sm:col-span-2"><dt className="mb-1 text-stone-600">Segmentos</dt><dd><TagList items={c.segmentos.map((s) => categoryLabel(s))} /></dd></div>
               <div className="sm:col-span-2"><dt className="mb-1 text-stone-600">Materiais e tecnologias</dt><dd><TagList items={[...c.materiais, ...c.tecnologias]} /></dd></div>
@@ -211,7 +211,7 @@ export function AdminUsers() {
               <tr key={u.id}>
                 <td className="px-4 py-3"><div className="font-semibold text-stone-900">{u.nome}</div><div className="text-xs text-stone-600">{u.email}</div></td>
                 <td className="px-4 py-3"><Badge tone={u.tipo === 'admin' ? 'earth' : u.tipo === 'empresa' ? 'blue' : 'green'}>{roleLabel[u.tipo]}</Badge></td>
-                <td className="px-4 py-3 text-stone-700">{u.cidade ? `${u.cidade}/${u.uf}` : '—'}</td>
+                <td className="px-4 py-3 text-stone-700">{u.cidade ? `${u.cidade}/${u.uf}` : '-'}</td>
                 <td className="px-4 py-3 text-xs text-stone-700">{dateBR(u.criadoEm)}<br />Termos aceitos: {dateTimeBR(u.termosAceitosEm)}</td>
                 <td className="px-4 py-3">{u.status === 'ativo' ? <Badge tone="green">Ativo</Badge> : <Badge tone="red">Bloqueado</Badge>}</td>
                 <td className="px-4 py-3 text-right">
@@ -418,7 +418,7 @@ export function AdminHistory() {
                   <td className="whitespace-nowrap px-4 py-3 text-stone-700"><FileClock className="mr-1 inline h-3.5 w-3.5" />{dateTimeBR(a.data)}</td>
                   <td className="px-4 py-3 text-stone-800">{userName(db, a.userId)}</td>
                   <td className="px-4 py-3 font-semibold text-stone-900">{a.acao}</td>
-                  <td className="px-4 py-3 text-stone-700">{a.detalhe || '—'} <span className="text-xs text-stone-500">({a.alvo})</span></td>
+                  <td className="px-4 py-3 text-stone-700">{a.detalhe || '-'} <span className="text-xs text-stone-500">({a.alvo})</span></td>
                 </tr>
               ))}
             </tbody>

@@ -133,7 +133,7 @@ export default function PainWizard() {
           <Siren className="h-4 w-4" /> {editing ? 'Editar dor' : 'Tenho uma dor'}
         </span>
         <h1 className="mt-3 text-2xl font-extrabold tracking-tight text-stone-900 sm:text-3xl">{editing ? 'Atualize sua necessidade' : 'Conte qual é o seu problema'}</h1>
-        <p className="mt-1 text-stone-600">Não precisa de conhecimento técnico nem de arquivo 3D. Preencha o que souber — as empresas ajudam com o resto.</p>
+        <p className="mt-1 text-stone-600">Não precisa de conhecimento técnico nem de arquivo 3D. Preencha o que souber, as empresas ajudam com o resto.</p>
       </div>
 
       {/* Etapas */}
@@ -217,7 +217,7 @@ export default function PainWizard() {
                 </Field>
                 <Field label="UF" htmlFor="d-uf">
                   <Select id="d-uf" value={f.uf} onChange={(e) => set('uf', e.target.value)}>
-                    <option value="">—</option>
+                    <option value="">-</option>
                     {UFS.map((u) => <option key={u}>{u}</option>)}
                   </Select>
                 </Field>
@@ -248,11 +248,11 @@ export default function PainWizard() {
                 ['Descrição', f.descricao],
                 ['Aplicação', categoryLabel(f.categoria)],
                 ['Fotos / vídeos', `${f.imagens.length} foto(s), ${f.videos.length} vídeo(s)`],
-                ['Máquina', [f.maquina, f.fabricante, f.modelo].filter(Boolean).join(' · ') || '—'],
+                ['Máquina', [f.maquina, f.fabricante, f.modelo].filter(Boolean).join(' · ') || '-'],
                 ['Quantidade', `${f.quantidade} unidade(s)`],
-                ['Local', f.cidade || f.uf ? `${f.cidade}${f.uf ? '/' + f.uf : ''}` : '—'],
+                ['Local', f.cidade || f.uf ? `${f.cidade}${f.uf ? '/' + f.uf : ''}` : '-'],
                 ['Prazo desejado', f.prazoDesejado ? dateBR(f.prazoDesejado + 'T12:00:00') : 'Sem prazo definido'],
-                ['Condições de uso', f.condicoes.map((c) => CONDITIONS.find((x) => x.id === c)?.label).join(', ') || '—'],
+                ['Condições de uso', f.condicoes.map((c) => CONDITIONS.find((x) => x.id === c)?.label).join(', ') || '-'],
               ].map(([k, v]) => (
                 <div key={k} className="grid gap-1 px-4 py-2.5 text-sm sm:grid-cols-[160px_1fr]">
                   <dt className="text-stone-600">{k}</dt>

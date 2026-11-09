@@ -160,7 +160,7 @@ export function CompanyProfile() {
             </Card>
             {c.verificada && (
               <p className="px-1 text-xs text-stone-600">
-                O selo indica que CNPJ e dados cadastrais foram verificados em {c.verificadaEm ? dateBR(c.verificadaEm) : '—'}. <Link to="/selo-verificado" className="underline">Ele não garante qualidade, prazo ou resultado do serviço.</Link>
+                O selo indica que CNPJ e dados cadastrais foram verificados em {c.verificadaEm ? dateBR(c.verificadaEm) : '-'}. <Link to="/selo-verificado" className="underline">Ele não garante qualidade, prazo ou resultado do serviço.</Link>
               </p>
             )}
             <div className="px-1"><ReportButton alvoTipo="empresa" alvoId={c.id} /></div>

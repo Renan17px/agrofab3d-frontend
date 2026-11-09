@@ -12,7 +12,7 @@ function AuthShell({ title, subtitle, children }: { title: string; subtitle: str
   return (
     <div className="mx-auto flex max-w-md flex-col px-4 py-10 sm:py-16">
       <div className="mb-6 text-center">
-        <Logo />
+        <Logo size={72} />
         <h1 className="mt-6 text-2xl font-extrabold tracking-tight text-stone-900">{title}</h1>
         <p className="mt-1 text-stone-600">{subtitle}</p>
       </div>
@@ -163,7 +163,7 @@ export function Register() {
             </Field>
             <Field label="UF" htmlFor="r-uf">
               <Select id="r-uf" value={f.uf} onChange={up('uf')}>
-                <option value="">—</option>
+                <option value="">-</option>
                 {UFS.map((u) => <option key={u}>{u}</option>)}
               </Select>
             </Field>

@@ -34,7 +34,7 @@ export default function Home() {
               <span className="block text-sol-300">Alguém pode fabricar para você.</span>
             </h1>
             <p className="mt-5 max-w-xl text-lg text-campo-100">
-              O AgroFab3D conecta produtores rurais a empresas de impressão 3D capazes de desenvolver e fabricar soluções sob medida — rápido, perto de você e sem precisar saber o nome técnico da peça.
+              O AgroFab3D conecta produtores rurais a empresas de impressão 3D capazes de desenvolver e fabricar soluções sob medida, rápido, perto de você e sem precisar saber o nome técnico da peça.
             </p>
             <form
               onSubmit={(e) => {
@@ -86,23 +86,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Números */}
-      <section className="border-b border-stone-200 bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-6 px-4 py-6 text-center sm:grid-cols-4">
-          {[
-            [parts.length, 'soluções no catálogo'],
-            [companies.length, 'empresas de impressão 3D'],
-            [companies.filter((c) => c.verificada).length, 'empresas verificadas'],
-            [doresAbertas, 'dores aguardando solução'],
-          ].map(([n, l]) => (
-            <div key={l as string}>
-              <div className="text-3xl font-extrabold text-campo-800">{n}</div>
-              <div className="text-sm text-stone-600">{l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Como funciona */}
       <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="max-w-2xl">
@@ -128,7 +111,7 @@ export default function Home() {
           <Card className="border-sol-300 bg-sol-300/10 p-6">
             <div className="flex items-center gap-3">
               <span className="rounded-xl bg-sol-400 p-2.5 text-stone-900"><Siren className="h-6 w-6" aria-hidden /></span>
-              <h3 className="text-xl font-bold text-stone-900">Ainda não existe — “Tenho uma dor”</h3>
+              <h3 className="text-xl font-bold text-stone-900">Ainda não existe, “Tenho uma dor”</h3>
             </div>
             <ol className="mt-5 space-y-4">
               {['Conte o problema com fotos, sem precisar de termos técnicos', 'Empresas compatíveis são avisadas automaticamente', 'Receba propostas com material, prazo e preço', 'Escolha, converse e resolva o problema'].map((t, i) => (

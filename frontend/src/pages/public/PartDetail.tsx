@@ -199,7 +199,7 @@ export default function PartDetail() {
             <div className="mt-3 flex flex-wrap items-center gap-2">
               {company.verificada && <VerifiedBadge small />}
               <span className="inline-flex items-center gap-1 text-sm">
-                <Stars value={rating.geral} size={14} /> <span className="text-stone-700">{rating.total ? rating.geral.toFixed(1) : '—'} ({rating.total})</span>
+                <Stars value={rating.geral} size={14} /> <span className="text-stone-700">{rating.total ? rating.geral.toFixed(1) : '-'} ({rating.total})</span>
               </span>
             </div>
             <div className="mt-4 border-t border-stone-100 pt-4">

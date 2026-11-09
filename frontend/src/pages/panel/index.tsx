@@ -3,7 +3,7 @@ import { useStore } from '@/data/store'
 import { ProducerHome, ProducerQuotes } from './Producer'
 import { CompanyHome, CompanyQuotes } from './Company'
 
-/** /painel — resumo de acordo com o tipo de usuário (RN-001) */
+/** /painel, resumo de acordo com o tipo de usuário (RN-001) */
 export function PanelHome() {
   const { user } = useStore()
   if (user?.tipo === 'admin') return <Navigate to="/admin" replace />

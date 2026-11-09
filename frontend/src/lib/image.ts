@@ -1,4 +1,4 @@
-// RNF-002 — Compressão de imagens no próprio navegador antes do envio:
+// RNF-002, Compressão de imagens no próprio navegador antes do envio:
 // converte para WebP e reduz até no máximo ~500 KB, preservando a legibilidade dos detalhes.
 
 const MAX_BYTES = 500 * 1024

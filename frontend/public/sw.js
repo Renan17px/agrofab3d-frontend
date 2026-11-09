@@ -1,6 +1,6 @@
 // Service worker simples: cache do "app shell" para uso com conexão instável no campo (RNF-004).
-const CACHE = 'agrofab3d-v1'
-const SHELL = ['/', '/index.html', '/icon.svg', '/manifest.webmanifest']
+const CACHE = 'agrofab3d-v2'
+const SHELL = ['/', '/index.html', '/favicon.ico', '/logo-192.png', '/manifest.webmanifest']
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)))

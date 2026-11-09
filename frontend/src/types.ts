@@ -8,7 +8,7 @@ export interface User {
   id: string
   nome: string
   email: string
-  senha: string // apenas para a simulação local — o backend real nunca expõe isso
+  senha: string // apenas para a simulação local, o backend real nunca expõe isso
   tipo: UserRole
   status: UserStatus
   telefone?: string
@@ -92,7 +92,7 @@ export interface Part {
   prazoDias: number
   preco: number | null // null = sob orçamento (RN-003)
   imagens: string[]
-  versoes: PartVersion[] // RN-016 — nunca sobrescritas
+  versoes: PartVersion[] // RN-016, nunca sobrescritas
   origem: ModelOrigin
   ativo: boolean // RF-012
   moderacao: 'publicado' | 'removido' // RF-041

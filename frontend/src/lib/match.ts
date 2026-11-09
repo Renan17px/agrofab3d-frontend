@@ -2,7 +2,7 @@ import type { Company, Pain } from '@/types'
 import { suggestMaterials } from '@/data/constants'
 
 /**
- * Correspondência automática entre dor e empresa — sugestão do feedback empresarial:
+ * Correspondência automática entre dor e empresa, sugestão do feedback empresarial:
  * cada empresa informa seus segmentos e o sistema identifica as empresas compatíveis.
  * Retorna uma pontuação de 0 a 100.
  */

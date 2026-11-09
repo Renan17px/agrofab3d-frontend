@@ -34,7 +34,7 @@ export default function Account() {
     toast('Senha alterada.')
   }
 
-  // LGPD: portabilidade — exporta os dados do titular
+  // LGPD: portabilidade, exporta os dados do titular
   const exportData = () => {
     const { senha: _senha, ...dados } = user!
     const payload = {
@@ -65,7 +65,7 @@ export default function Account() {
             <Field label="Telefone / WhatsApp" htmlFor="a-tel"><Input id="a-tel" type="tel" value={f.telefone} onChange={(e) => setF({ ...f, telefone: maskPhone(e.target.value) })} /></Field>
             <div className="grid grid-cols-[1fr_90px] gap-3">
               <Field label="Cidade" htmlFor="a-cid"><Input id="a-cid" value={f.cidade} onChange={(e) => setF({ ...f, cidade: e.target.value })} /></Field>
-              <Field label="UF" htmlFor="a-uf"><Select id="a-uf" value={f.uf} onChange={(e) => setF({ ...f, uf: e.target.value })}><option value="">—</option>{UFS.map((u) => <option key={u}>{u}</option>)}</Select></Field>
+              <Field label="UF" htmlFor="a-uf"><Select id="a-uf" value={f.uf} onChange={(e) => setF({ ...f, uf: e.target.value })}><option value="">-</option>{UFS.map((u) => <option key={u}>{u}</option>)}</Select></Field>
             </div>
             <div className="sm:col-span-2 flex justify-end"><Button type="submit">Salvar</Button></div>
           </form>
